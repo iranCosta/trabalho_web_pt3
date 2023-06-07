@@ -1,6 +1,6 @@
 <header>
 
-    <img src="assets/images/imgLogo.png" alt="Logo do site" id="imgLogo">
+    <img src="assets/images/imgLogo.png" alt="Logo do site" id="imgLogo" [routerLink]="['/home']">
 
     <div class="mexeMenu">
         <main>
@@ -8,8 +8,8 @@
                 <div class="container-fluid">
                     <div class="collapse navbar-collapse justify-content-center" id="navBar_menu">
                         <div class="navbar-nav">
-                            <a class="nav-link active" href="#">Home</a>
-                            <a class="nav-link active" href="#">Funcionários</a>
+                            <a class="nav-link activated" [routerLink]="['home']">Home</a>
+                            <a class="nav-link activated" [routerLink]="['funcionario']">Funcionários</a>
                         </div>
                     </div>
                 </div>

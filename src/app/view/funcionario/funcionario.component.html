@@ -1,0 +1,18 @@
+<div class="move_card">
+    <div class="card" style="width: 18rem;" *ngFor="let dados of vetDadosJson">
+        <div>
+            <img [src]="dados.foto" style="background-color: black;">
+        </div>
+
+        <div class="card-body" id="segundoItem" style="font-family: Arial, Helvetica, sans-serif;">
+            <p class="card-text">{{dados.nome}}</p>
+            <p class="card-text">{{dados.subobjeto.propriedade1}}</p>
+            <p class="card-text">{{dados.subobjeto.propriedade2}}</p>
+        </div>
+        <ul class="card-body" id="terceiroItem"
+            style="font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: gray;">
+            <a href="mailto:{{dados.email}}">{{dados.email}}</a>
+        </ul>
+    </div>
+    <br>
+</div>
