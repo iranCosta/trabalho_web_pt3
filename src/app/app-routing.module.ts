@@ -5,6 +5,11 @@ import { FuncionarioComponent } from './view/funcionario/funcionario.component';
 
 const routes: Routes = [
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home'
+  },
+  {
     path: 'home',
     component: HomeComponent
   },
