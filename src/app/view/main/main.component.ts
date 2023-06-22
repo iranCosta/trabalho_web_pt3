@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Dados } from 'src/app/models/Dados';
 
 @Component({
   selector: 'app-main',
