@@ -9,6 +9,7 @@ import { MainComponent } from './view/main/main.component';
 import { HomeComponent } from './view/home/home.component';
 import { FuncionarioComponent } from './view/funcionario/funcionario.component';
 import { Cadastro2Component } from './view/cadastro2/cadastro2.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { Cadastro2Component } from './view/cadastro2/cadastro2.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
