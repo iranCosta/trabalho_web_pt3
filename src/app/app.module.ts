@@ -10,6 +10,7 @@ import { HomeComponent } from './view/home/home.component';
 import { FuncionarioComponent } from './view/funcionario/funcionario.component';
 import { Cadastro2Component } from './view/cadastro2/cadastro2.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

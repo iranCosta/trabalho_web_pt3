@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 header {
-
     background-color: bisque;
     position: relative;
     top: 0;
@@ -16,7 +15,6 @@ body {
 }
 
 footer {
-    position: fixed;
     bottom: 0;
     left: 0;
     bottom: 0;
@@ -37,6 +35,14 @@ footer {
     margin: 15%;
 }
 
+.move_card_PesquisaID {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15%;
+}
+
 #imgLogo {
     width: 100px;
     height: 100px;
@@ -45,6 +51,17 @@ footer {
 
 #navBar_menu {
     border: #ec9c73 solid 3px;
+}
+
+#consultarId {
+    color: white;
+    border: #ec9c73;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    background-color: #ec9c73;
 }
 
 .container-fluid {
@@ -98,4 +115,3 @@ footer {
     border: 5px solid bisque;
     border-radius: 5px;
 }
-

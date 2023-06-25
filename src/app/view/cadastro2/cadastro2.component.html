@@ -1,7 +1,10 @@
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
+<div class="move_card_PesquisaID">
+    <div class="card" style="width: 18rem;">
         <h5 class="card-title">Pesquisar ID</h5>
-        <input type="text" id="id"> 
-        <button id="consultar">Consultar</button>
+        <br>
+        <input type="text" [(ngModel)]="vId">
+        <br>
+        <button (click)="encontrarCadastro2()" id="consultarId">Consultar</button>
+
     </div>
-</div>
+    <div>{{vCadastro.id+" - " +vCadastro.nome+ " - " +vCadastro.departamento}}</div>
