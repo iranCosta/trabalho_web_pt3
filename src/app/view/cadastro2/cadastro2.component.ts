@@ -35,9 +35,6 @@ export class Cadastro2Component {
     email: ''
   }
 
-  public status: string = "OK";
-  public mensagem: string = "";
-
   ngOnInit(): void {
     this.pService.findAll().subscribe(
       (pVetCadastros2) => {
@@ -73,7 +70,7 @@ export class Cadastro2Component {
   apagaCadastro(): void {
     this.pService.deleteCadastro(this.vId).subscribe(
       (pCadastro) => {
-        alert(pCadastro);
+        alert();
         //retornar informação usando o pCadastro
         //console.log(pCadastro);
       }
