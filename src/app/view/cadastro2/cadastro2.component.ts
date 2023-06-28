@@ -35,7 +35,7 @@ export class Cadastro2Component {
     email: ''
   }
 
-  private status: string = '';
+  public status: string = '';
   public mensagen: string = '';
 
   ngOnInit(): void {
@@ -65,15 +65,16 @@ export class Cadastro2Component {
   apagaCadastro(): void {
     this.pService.deleteCadastro(this.vId).subscribe(
       (pCadastro) => {
-        if (pCadastro.status == "OK") {
-          this.mensagen = pCadastro.mensagen;
-          //console.log(pCadastro.mensagen)
+        console.log(pCadastro);
+        if (pCadastro.status == "Ok") {
+          this.mensagen = pCadastro.mensagem;
+          confirm(pCadastro.mensagem);
         }
         else if (pCadastro.status == "Erro") {
-          this.mensagen = pCadastro.mensagen;
-          //console.log(pCadastro.mensagen)
+          this.mensagen = pCadastro.mensagem;
+          confirm(pCadastro.mensagem);
         }
       }
     )
   }
-}
+} 
