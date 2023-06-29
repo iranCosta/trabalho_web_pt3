@@ -58,12 +58,13 @@
     <button id="excluir" (click)="apagaCadastro()">Exclusão</button>
     <br>
     <button id="inserir" (click)="inserirCadastro()">Inserir</button>
-    <div *ngIf="mensagem">
-        <div *ngIf="" class="alert alert-danger" role="alert">
-            {{vCadastro?.mensagem}}
+    <div>
+        <div *ngIf="vCadastro.mensagem == 'Ok'" class="alert alert-danger" role="alert">
+            <div>{{vCadastro.mensagem}}</div>
         </div>
+        <br>
         <div class="alert alert-success" role="alert">
-            {{vCadastro?.mensagem}}
+            <div>{{vCadastro.mensagem}}</div>
         </div>
     </div>
 </div>

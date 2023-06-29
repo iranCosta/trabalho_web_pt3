@@ -32,7 +32,7 @@ export class Cadastro2Component {
     nome: '',
     departamento: '',
     endereco: '',
-    email: ''
+    email: '',
   }
 
   public status: string = '';
@@ -68,11 +68,11 @@ export class Cadastro2Component {
         console.log(pCadastro);
         if (pCadastro.status == "Ok") {
           this.mensagen = pCadastro.mensagem;
-          confirm(pCadastro.mensagem);
+          //confirm(pCadastro.mensagem);
         }
         else if (pCadastro.status == "Erro") {
           this.mensagen = pCadastro.mensagem;
-          confirm(pCadastro.mensagem);
+          //confirm(pCadastro.mensagem);
         }
       }
     )
