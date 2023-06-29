@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Cadastro2Service } from 'src/app/controller/cadastro2.service';
 import { Cadastro2 } from 'src/app/models/Cadastro2';
+import { Delete } from 'src/app/models/Delete';
+import { Inserir } from 'src/app/models/Inserir';
 
 @Component({
   selector: 'app-cadastro2',
@@ -26,17 +28,21 @@ export class Cadastro2Component {
     departamento: '',
     endereco: '',
     email: ''
-  }
-
-  vCadastroUpdate: Cadastro2 = {
-    nome: '',
-    departamento: '',
-    endereco: '',
-    email: '',
-  }
+  };
 
   public status: string = '';
-  public mensagen: string = '';
+
+  public retornoInserir: Inserir = {
+    status: '',
+    mensagem: ''
+  };
+
+  public retornoDeletar: Delete = {
+    status: '',
+    mensagem: ''
+  };
+
+  mostrarDiv: boolean = false;
 
   ngOnInit(): void {
     this.pService.findAll().subscribe(
@@ -57,7 +63,8 @@ export class Cadastro2Component {
   inserirCadastro(): void {
     this.pService.insertcadastro(this.vCadastroNovo).subscribe(
       (pCadastro) => {
-        this.vCadastro = pCadastro;
+        console.log(pCadastro);
+        this.retornoInserir = pCadastro;
       }
     )
   }
@@ -66,15 +73,9 @@ export class Cadastro2Component {
     this.pService.deleteCadastro(this.vId).subscribe(
       (pCadastro) => {
         console.log(pCadastro);
-        if (pCadastro.status == "Ok") {
-          this.mensagen = pCadastro.mensagem;
-          //confirm(pCadastro.mensagem);
-        }
-        else if (pCadastro.status == "Erro") {
-          this.mensagen = pCadastro.mensagem;
-          //confirm(pCadastro.mensagem);
-        }
+        this.retornoDeletar = pCadastro;
       }
     )
   }
-} 
+}
+

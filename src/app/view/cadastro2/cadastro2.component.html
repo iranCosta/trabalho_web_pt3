@@ -1,3 +1,7 @@
+<div class="h1TextCentesAlinhar">
+    <h1>Cadastro</h1>
+</div>
+
 <div class="move_card_PesquisaID">
     <div class="card" style="width: 18rem;">
         <h5 class="card-title">Pesquisar ID</h5>
@@ -57,14 +61,52 @@
     <br>
     <button id="excluir" (click)="apagaCadastro()">Exclusão</button>
     <br>
-    <button id="inserir" (click)="inserirCadastro()">Inserir</button>
-    <div>
-        <div *ngIf="vCadastro.mensagem == 'Ok'" class="alert alert-danger" role="alert">
-            <div>{{vCadastro.mensagem}}</div>
+    <div *ngIf="retornoDeletar.status == 'Ok' ? true : false" class="alert alert-success" role="alert">
+        <div>
+            {{retornoDeletar.mensagem}}
         </div>
-        <br>
-        <div class="alert alert-success" role="alert">
-            <div>{{vCadastro.mensagem}}</div>
+    </div>
+    <div *ngIf="retornoDeletar.status  == 'Erro' ? true : false" class="alert alert-danger" role="alert">
+        <div>
+            {{retornoDeletar.mensagem}}
+        </div>
+    </div>
+    <br>
+    <div class="card" style="width: 18rem;">
+        <h5 class="card-title">Inseri Dados</h5>
+        <div id="formInsert">
+            <label for="id">Id</label>
+            <br>
+            <input type="number" id="id" [(ngModel)]="vCadastroNovo.id">
+            <br>
+            <label for="nome">Nome</label>
+            <br>
+            <input type="text" id="nome" [(ngModel)]="vCadastroNovo.nome">
+            <br>
+            <label for="departamento">Departamento</label>
+            <br>
+            <input type="text" id="departamento" [(ngModel)]="vCadastroNovo.departamento">
+            <br>
+            <label for="endereco">Endereço</label>
+            <br>
+            <input type="text" id="endereco" [(ngModel)]="vCadastroNovo.endereco">
+            <br>
+            <label for="email">Email</label>
+            <br>
+            <input type="text" id="email" [(ngModel)]="vCadastroNovo.email">
+        </div>
+        <button id="inserir" (click)="inserirCadastro()">Inserir</button>
+    </div>
+    <br>
+    <br>
+    <div *ngIf="retornoInserir.status == 'Ok' ? true : false" class="alert alert-success" role="alert">
+        <div>
+            {{retornoInserir.mensagem}}
+        </div>
+    </div>
+    <div *ngIf="retornoInserir.status  == 'Erro' ? true : false" class="alert alert-danger" role="alert">
+        <div>
+            {{retornoInserir.mensagem}}
         </div>
     </div>
 </div>
